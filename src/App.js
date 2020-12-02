@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import STORE from "./store";
 import List from "./composition/List";
 import Card from "./composition/Card";
 
