@@ -2,7 +2,14 @@ import React from "react";
 import Card from "./Card";
 import "./List.css";
 
-export default function List(props) {
+export default function List (props) {
+  
+  static defaultProps = {
+    STORE: {
+      lists: [],
+      allCards: {},
+    },
+  };
   return (
     <section className="List">
       <header className="List-header">

@@ -18,6 +18,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Trelloyes!</h1>
         </header>
+
         <div className="App-list">
           {STORE.lists.map((list) => (
             <List
