@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 
 // make the card component availble to this file so that it can be tested
-import Card from "./Card";
+import Card from "../Components/Card";
 
 //WRITE AT LEAST ONE SMOKE CASE TO ENSURE THAT THE TEST RENDERS IN THE FIRST PLACE
 it("renders properly withouth crashing", () => {
@@ -24,7 +24,13 @@ it("renders properly withouth crashing", () => {
 // 1. render teh component and create a human readable JSON file
 it("renders the UI as expected", () => {
   const tree = renderer
-    .create(<Card key={card.id} title={card.title} content={card.content} />)
+    .create(
+      <Card
+        key={Card.card.id}
+        title={Card.card.title}
+        content={Card.card.content}
+      />
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
