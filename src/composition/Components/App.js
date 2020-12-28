@@ -78,7 +78,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { STORE } = this.props;
+    const { lists, allCards } = this.state;
     return (
       <main className="App">
         <header className="App-header">
@@ -86,11 +86,11 @@ class App extends React.Component {
         </header>
 
         <div className="App-list">
-          {STORE.lists.map((list) => (
+          {lists.map((list) => (
             <List
               key={list.id}
               header={list.header}
-              cards={list.cardIds.map((id) => STORE.allCards[id])}
+              cards={list.cardIds.map((id) => allCards[id])}
             />
           ))}
         </div>
