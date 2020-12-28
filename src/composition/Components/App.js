@@ -3,6 +3,17 @@ import "../Styles/App.css";
 import List from "./List";
 import STORE from "../../STORE";
 
+const newRandomCard = () => {
+  const id =
+    Math.random().toString(36).substring(2, 4) +
+    Math.random().toString(36).substring(2, 4);
+  return {
+    id,
+    title: `Random Card ${id}`,
+    content: "lorem ipsum",
+  };
+};
+
 function omit(obj, keyToOmit) {
   return Object.entries(obj).reduce(
     (newObj, [key, value]) =>
