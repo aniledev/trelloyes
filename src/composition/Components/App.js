@@ -91,8 +91,10 @@ class App extends React.Component {
           {lists.map((list) => (
             <List
               key={list.id}
+              id={list.id}
               header={list.header}
               cards={list.cardIds.map((id) => allCards[id])}
+              onClickDelete={this.handleDeleteCard}
             />
           ))}
         </div>
