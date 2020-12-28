@@ -5,8 +5,8 @@ import ReactDOM from "react-dom";
 //make react-renderer available to the file
 import renderer from "react-test-renderer";
 //make the List component available to this test file so that it can be tested
-import List from "./List";
-import App from "../App";
+import List from "../Components/List";
+import App from "../Components/App";
 
 // WRITE AT LEAST ONE SMOKE CASE TO ENSURE THAT THE TEST RENDERS IN THE FIRST PLACE
 // this is the test case
