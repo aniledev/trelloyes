@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import "../../../src/composition/List.css";
+import "../Styles/List.css";
 
 export default class List extends React.Component {
   static defaultProps = {
