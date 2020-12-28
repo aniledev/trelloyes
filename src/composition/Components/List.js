@@ -20,7 +20,13 @@ export default function List(props) {
             //pass in onClickDelete callback prop so it gets passed back up to the App component
           />
         ))}
-        <button>Add Random Card +</button>
+        <button
+          className="add-button"
+          type="button"
+          onClick={() => props.onClickAdd(props.id)}
+        >
+          Add Random Card +
+        </button>
       </div>
     </section>
   );
