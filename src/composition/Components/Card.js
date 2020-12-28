@@ -5,12 +5,12 @@ import "../Styles/Card.css";
 // define className prop
 // pass in props.title and props.content into function component
 
-function Card(props) {
+export default function Card(props) {
   return (
     <div className="Card">
       <h3>{props.title}</h3>
       {/* Use the id of the props that are passed in to access the individual card and pass it back up the component tree using a callback prop function */}
-      <button onClick={() => props.onDeleteCard(props.id)} type="button">
+      <button onClick={() => props.onClickDelete(props.id)} type="button">
         delete
       </button>
       <p>{props.content}</p>
@@ -22,5 +22,3 @@ function Card(props) {
 Card.propTypes = {
   onClickDelete: () => {},
 };
-
-export default Card;

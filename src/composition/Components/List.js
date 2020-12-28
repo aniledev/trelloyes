@@ -9,14 +9,17 @@ export default function List (props){
     return (
       <section className="List">
         <header className="List-header">
-          <h2>{this.props.header}</h2>
+          {/* props are passed in from the App component */}
+          {/* pass in onClickDelete callback prop so it gets passed back up to the App component */}
+          <h2>{props.header}</h2>
         </header>
         <div className="List-cards">
-          {this.props.cards.map((card) => (
-            <Card key={card.id} title={card.title} content={card.content} />
+          {props.cards.map((card) => (
+            <Card key={card.id} title={card.title} content={card.content}
+              onClickDelete={props.onClickDelete}/>
           ))}
         </div>
       </section>
     );
-  }
+  };
 }
