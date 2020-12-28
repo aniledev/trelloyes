@@ -2,13 +2,8 @@ import React from "react";
 import Card from "./Card";
 import "../Styles/List.css";
 
-export default class List extends React.Component {
-  static defaultProps = {
-    STORE: {
-      lists: [],
-      allCards: {},
-    },
-  };
+export default function List (props){
+ 
 
   render() {
     return (
