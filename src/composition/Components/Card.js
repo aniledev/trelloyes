@@ -9,6 +9,7 @@ function Card(props) {
   return (
     <div className="Card">
       <h3>{props.title}</h3>
+      <button type="button">Delete</button>
       <p>{props.content}</p>
     </div>
   );
