@@ -80,6 +80,7 @@ class App extends React.Component {
   render() {
     // use obejct destructuring to access this.state keys
     const { lists, allCards } = this.state;
+
     return (
       <main className="App">
         <header className="App-header">

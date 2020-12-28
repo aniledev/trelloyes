@@ -9,10 +9,18 @@ function Card(props) {
   return (
     <div className="Card">
       <h3>{props.title}</h3>
-      <button type="button">Delete</button>
+      {/* Use the id of the props that are passed in to access the individual card and pass it back up the component tree using a callback prop function */}
+      <button onClick={() => props.onDeleteCard(props.id)} type="button">
+        delete
+      </button>
       <p>{props.content}</p>
     </div>
   );
 }
+
+// WHAT EXACTLY DOES THIS LINE DO?????
+Card.propTypes = {
+  onClickDelete: () => {},
+};
 
 export default Card;
