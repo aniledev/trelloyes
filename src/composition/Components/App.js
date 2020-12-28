@@ -53,29 +53,31 @@ class App extends React.Component {
   };
 
   // this function will handle the add callback prop
-  // handleAddCard = (listId) => {
-  //   const newCard = newRandomCard();
+  handleAddCard = (listId) => {
+    // create a new card using the provided newRandomCard()
+    const newCard = newRandomCard();
 
-  //   const newLists = this.state.store.lists.map((list) => {
-  //     if (list.id === listId) {
-  //       return {
-  //         ...list,
-  //         cardIds: [...list.cardIds, newCard.id],
-  //       };
-  //     }
-  //     return list;
-  //   });
+    // i'm unsure exactly what this code here is doing
+    const newLists = this.state.store.lists.map((list) => {
+      if (list.id === listId) {
+        return {
+          ...list,
+          cardIds: [...list.cardIds, newCard.id],
+        };
+      }
+      return list;
+    });
 
-  //   this.setState({
-  //     store: {
-  //       lists: newLists,
-  //       allCards: {
-  //         ...this.state.store.allCards,
-  //         [newCard.id]: newCard,
-  //       },
-  //     },
-  //   });
-  // };
+    this.setState({
+      store: {
+        lists: newLists,
+        allCards: {
+          ...this.state.store.allCards,
+          [newCard.id]: newCard,
+        },
+      },
+    });
+  };
 
   render() {
     // use object destructuing to access the current state
