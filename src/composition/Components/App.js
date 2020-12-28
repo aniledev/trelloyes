@@ -67,6 +67,12 @@ class App extends React.Component {
     },
   };
 
+  // DON'T FORGET TO USE ARROW FUNCTIONS SO WE AVOID UNDEFINED ERRORS
+  // this function will handle the delete callback prop
+  handleDeleteCard = () => {};
+  // this function will handle the add callback prop
+  handleAddCard = () => {};
+
   render() {
     const { STORE } = this.props;
     return (
