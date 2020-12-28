@@ -1,5 +1,5 @@
 import React from "react";
-import "./Card.css";
+import "../../../src/composition/Card.css";
 
 // create a function component called Card
 // define className prop

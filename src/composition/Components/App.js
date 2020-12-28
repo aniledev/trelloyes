@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../../../src/App.css";
 import List from "./List";
 
 // WHAT EXACTLY IS A CLASS AND HOW DOES IT FUNCTION?
