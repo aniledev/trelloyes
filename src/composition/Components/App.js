@@ -3,6 +3,13 @@ import "../Styles/App.css";
 import List from "./List";
 
 // this component will contain the state for the application because it is the lowest common ancestor that can read and update state
+function omit(obj, keyToOmit) {
+  return Object.entries(obj).reduce(
+    (newObj, [key, value]) =>
+      key === keyToOmit ? newObj : { ...newObj, [key]: value },
+    {}
+  );
+}
 
 class App extends React.Component {
   //initialize state for App component using test data
@@ -68,10 +75,28 @@ class App extends React.Component {
   };
 
   // DON'T FORGET TO USE ARROW FUNCTIONS SO WE AVOID UNDEFINED ERRORS
-  // this function will handle the delete callback prop
-  handleDeleteCard = () => {
-    console.log("handle delete clicked");
+
+  handleDeleteCard = (cardId) => {
+    // this function will handle the delete callback prop
+    // use object destructuing to access the current state
+    const { lists, allCards } = this.state;
+
+    // create a new array of the list using a map array method
+    const newLists = lists.map((list) => ({
+      ...list,
+      cardIds: list.cardIds.filter((id) => id !== cardId),
+    }));
+    // create a new array of the cards minus the deleted card using the omit function
+    const newCards = omit(allCards, cardId);
+
+    this.setState({
+      store: {
+        lists: newLists,
+        allCards: newCards,
+      },
+    });
   };
+
   // this function will handle the add callback prop
   handleAddCard = () => {
     console.log("handle add clicked");
